@@ -1,0 +1,40 @@
+generated: '2026-08-13'
+method: searched
+source: https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FAMlzUAH
+note: >-
+  PharmaForceIQ (Aktana) publishes NO pricing page on its own website —
+  https://pharmaforceiq.com/pricing/ returns HTTP 404 and no pricing URL appears in
+  the site's page-sitemap.xml. The only price the company publishes anywhere is on
+  its own Salesforce AppExchange listing, where Aktana, Inc. is the listed publisher.
+  Everything else is a "Request a Demo" sales motion.
+plan_count: 1
+currency: USD
+pricing_model: enterprise-subscription
+self_serve: false
+free_tier: false
+trial: false
+plans:
+- name: Aktana Omnichannel for Salesforce Marketing & Data Cloud
+  price: '1250'
+  currency: USD
+  unit: per brand
+  billing_period: month
+  contract: annual
+  distribution: Salesforce AppExchange (paid add-on; publisher Aktana, Inc.)
+  prerequisites:
+  - Aktana Orchestrator subscription (annual)
+  - Tactic Genie subscription (annual)
+  - Salesforce Marketing Cloud Engagement
+  - Salesforce Platform API
+  source: https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FAMlzUAH
+  verbatim_price: $1,250 USD/Brand/month
+evidence:
+- url: https://pharmaforceiq.com/pricing/
+  status: 404
+  finding: no pricing page published on the company website
+- url: https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FAMlzUAH
+  status: 200
+  finding: published list price for the Salesforce managed package, publisher Aktana, Inc.
+- url: https://pharmaforceiq.com/request-a-demo/
+  status: 200
+  finding: the primary commercial route is a demo request form, not self-serve signup

@@ -1,0 +1,23 @@
+generated: '2026-08-13'
+method: searched
+source: https://pharmaforceiq.com/
+note: >-
+  PharmaForceIQ (Aktana) publishes no public API, no developer portal and no API
+  reference, so there is no published rate-limit contract to record. This is an
+  honest zero from a completed search, not an unchecked field. No RateLimits pointer
+  is emitted in apis.yml, because emitting one would assert a runtime signal the
+  provider does not publish.
+limit_count: 0
+headers: []
+status_on_exhaustion: null
+evidence:
+- url: https://pharmaforceiq.com/partners-integrations/
+  status: 200
+  finding: integrations page describes connectivity in prose; no API reference, no limits
+- url: https://pharmaforceiq.com/aktana-omnichannel-data-interface/
+  status: 200
+  finding: the Omnichannel Data Interface product page names connectors and a data
+    schema layer but publishes no endpoint, schema or limit documentation
+- url: https://support.aktana.com/hc/en-us
+  status: 403
+  finding: customer help center is behind a Cloudflare bot challenge / login

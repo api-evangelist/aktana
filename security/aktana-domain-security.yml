@@ -1,11 +1,11 @@
-generated: '2026-07-17'
+generated: '2026-08-13'
 method: probed
 source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
 hosts:
 - host: pharmaforceiq.com
   https: true
   tls_version: TLSv1.3
-  cert_expires: Sep 17 21:17:46 2026 GMT
+  cert_expires: Nov  2 21:45:55 2026 GMT
   hsts: false
 domains:
 - domain: pharmaforceiq.com

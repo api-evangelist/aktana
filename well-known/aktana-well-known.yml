@@ -1,0 +1,118 @@
+generated: '2026-08-13'
+method: probed
+source: live HTTP probes of every host reachable from apis.yml (pharmaforceiq.com, aktana.com, app.pharmaforceiq.com)
+note: >-
+  Every /.well-known/ path probed returned 404 on the marketing hosts. The customer
+  application host (app.pharmaforceiq.com) answers HTTP 200 with the JSON body
+  {"error":"Not Found","code":404} for EVERY path including paths that cannot exist,
+  so all of its 200s are soft-404s and are recorded as misses, not as documents.
+  No WellKnown / SecurityTxt pointer is emitted in apis.yml because no path returned
+  a real document. This file records a verified absence.
+hosts:
+- host: https://pharmaforceiq.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /openapi.json
+    status: 404
+  - path: /swagger.json
+    status: 404
+  - path: /api-docs
+    status: 404
+- host: https://aktana.com
+  note: >-
+    aktana.com and every subdomain tested (www, api, developer, developers, help,
+    login, app, my) 301/302 in full to https://pharmaforceiq.com/ following the
+    PharmaForceIQ rebrand. No path on the legacy domain serves its own content.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /llms.txt
+    status: 301
+    redirects_to: https://pharmaforceiq.com/
+  - path: /openapi.json
+    status: 301
+    redirects_to: https://pharmaforceiq.com/
+  - path: /swagger.json
+    status: 301
+    redirects_to: https://pharmaforceiq.com/
+- host: https://app.pharmaforceiq.com
+  note: >-
+    SOFT-404 HOST. A Laravel application whose catch-all returns HTTP 200 with
+    {"error":"Not Found","code":404} for every unmatched path. Verified with a
+    control path (/zzz-definitely-not-real-xyz) which returned the identical
+    200 + not-found body. Every 200 below is therefore a MISS.
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    real_document: false
+    body: '{"error":"Not Found","code":404}'
+  - path: /.well-known/openid-configuration
+    status: 200
+    real_document: false
+    body: '{"error":"Not Found","code":404}'
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    real_document: false
+    body: '{"error":"Not Found","code":404}'
+  - path: /.well-known/agent-card.json
+    status: 200
+    real_document: false
+    body: '{"error":"Not Found","code":404}'
+  - path: /.well-known/agent.json
+    status: 200
+    real_document: false
+    body: '{"error":"Not Found","code":404}'
+  - path: /openapi.json
+    status: 200
+    real_document: false
+    body: '{"error":"Not Found","code":404}'
+  - path: /swagger.json
+    status: 200
+    real_document: false
+    body: '{"error":"Not Found","code":404}'
+  - path: /api-docs
+    status: 200
+    real_document: false
+    body: '{"error":"Not Found","code":404}'
+  - path: /llms.txt
+    status: 200
+    real_document: false
+    body: '{"error":"Not Found","code":404}'
+  - path: /graphql
+    status: 200
+    real_document: false
+    body: '{"error":"Not Found","code":404}'
+summary:
+  documents_found: 0
+  hosts_probed: 3
+  paths_probed: 31
+  well_known_pointer_emitted: false
+  security_txt_pointer_emitted: false
+  agent_card_found: false
