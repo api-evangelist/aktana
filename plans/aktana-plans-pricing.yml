@@ -38,3 +38,17 @@ evidence:
 - url: https://pharmaforceiq.com/request-a-demo/
   status: 200
   finding: the primary commercial route is a demo request form, not self-serve signup
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - subscription
+  units: []
+  plans:
+  - name: Aktana Omnichannel for Salesforce Marketing & Data Cloud
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods: []
