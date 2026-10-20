@@ -1,6 +1,7 @@
 generated: '2026-08-13'
-method: searched
+method: none
 source: https://pharmaforceiq.com/
+name: Aktana (PharmaForceIQ) rate limits
 note: >-
   PharmaForceIQ (Aktana) publishes no public API, no developer portal and no API
   reference, so there is no published rate-limit contract to record. This is an
@@ -8,6 +9,7 @@ note: >-
   is emitted in apis.yml, because emitting one would assert a runtime signal the
   provider does not publish.
 limit_count: 0
+limits: []
 headers: []
 status_on_exhaustion: null
 evidence:

@@ -1,6 +1,7 @@
 generated: '2026-08-13'
 method: searched
 source: https://appexchange.salesforce.com/appxListingDetail?listingId=a0N3A00000FAMlzUAH
+name: Aktana (PharmaForceIQ) API Plans
 note: >-
   PharmaForceIQ (Aktana) publishes NO pricing page on its own website —
   https://pharmaforceiq.com/pricing/ returns HTTP 404 and no pricing URL appears in

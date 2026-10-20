@@ -1,0 +1,113 @@
+generated: '2026-10-20'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 8
+  own: 3
+  other_domain: 4
+  platform: 1
+  roles:
+  - api
+  - docs
+  - identity
+  - marketing
+  - other
+  - website
+hosts:
+- host: api.appexchange.salesforce.com
+  found_by:
+  - probed
+  - site-links
+  - namespace-probe
+  - well-known
+  types: []
+  serves: []
+  title: Down for maintenance
+  status: 200
+  registrable_domain: salesforce.com
+  role: api
+  relation: other-domain
+- host: api.pharmaforceiq.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: pharmaforceiq.com
+  role: api
+  relation: own
+- host: api.salesforce.com
+  found_by:
+  - contract-discovery
+  types: []
+  serves: []
+  registrable_domain: salesforce.com
+  role: api
+  relation: other-domain
+- host: app.pharmaforceiq.com
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types:
+  - Login
+  serves: []
+  registrable_domain: pharmaforceiq.com
+  role: identity
+  relation: own
+- host: appexchange.salesforce.com
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - Pricing
+  serves: []
+  registrable_domain: salesforce.com
+  role: marketing
+  relation: other-domain
+- host: docs.salesforce.com
+  found_by:
+  - probed
+  - site-links
+  - namespace-probe
+  - docs-index
+  - well-known
+  types: []
+  serves:
+  - docs
+  title: Salesforce Docs Portal
+  status: 200
+  registrable_domain: salesforce.com
+  role: docs
+  relation: other-domain
+- host: pharmaforceiq.com
+  found_by:
+  - pointer
+  - probed
+  - contract-discovery
+  - well-known
+  types:
+  - Newsroom
+  - Website
+  - PrivacyPolicy
+  - Blog
+  - Support
+  - Compliance
+  - Partners
+  serves: []
+  registrable_domain: pharmaforceiq.com
+  role: website
+  relation: own
+- host: www.linkedin.com
+  found_by:
+  - pointer
+  types:
+  - LinkedIn
+  serves: []
+  registrable_domain: linkedin.com
+  role: other
+  relation: platform
